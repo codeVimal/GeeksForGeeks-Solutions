@@ -1,0 +1,29 @@
+How to find a missing number in an array between a given range?
+1. Add every possible numbers in the given range.
+2. Add every given number in the input array.
+3. Subtract the 2. from 1.
+4. Yeah, you got the answer.
+
+My Solution:
+-----------------------------------------------------------------
+class Solution{
+  public:
+    int MissingNumber(vector<int>& array, int n) {
+        int m = n-1;
+        int sum = 0;
+        int sum2 = 0;
+        int i,j;
+        for(i=1;i<=n;i++)
+        {
+            sum = sum + i;
+        }
+        for(i=0;i<m;i++)
+        {
+            sum2 = sum2 + array[i];
+        }
+        int ans = sum - sum2;
+        return ans;
+    }
+};
+----------------------------------------------------------------
+Practice Link: https://practice.geeksforgeeks.org/problems/missing-number-in-array1416/1?page=1&status[]=unsolved&category[]=Arrays&sortBy=submissions

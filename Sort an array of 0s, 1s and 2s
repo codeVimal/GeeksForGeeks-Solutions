@@ -1,0 +1,46 @@
+EASY QUESTION BRUH!
+Approach:
+1. Count the number of zeroes and ones.
+2. Now for example, let the zeroes count be 3, so you are going to fill the first 3 spaces with '0'. (i.e) In indexes '0','1', and '2'.
+3. Then you have the number of ones and let it be 2, now from the index 3, you're going to fill  1s in the next two spaces.
+4. Then in the remaining spaces fill the 2s.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SOLUTION:
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+// } Driver Code Ends
+class Solution
+{
+    public:
+    void sort012(int a[], int n)
+    {
+        int zero=0,one=0,i;
+        for(i=0;i<n;i++)
+        {
+            if (a[i] == 0)
+            {
+                zero++;
+            }
+            if(a[i]==1)
+            {
+                one++;
+            }
+        }
+        for(i=0;i<zero;i++)
+        {
+            a[i]=0;
+        }
+        for(i=zero;i<zero+one;i++)
+        {
+            a[i]=1;
+        }
+        for(i=zero+one;i<n;i++)
+        {
+            a[i]=2;
+        }
+    }
+    
+};
+----------------------------------------------------------------------------------------------
+Question Link: https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/0
